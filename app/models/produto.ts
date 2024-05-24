@@ -21,4 +21,5 @@ export default class Produto extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
 }

@@ -5,6 +5,12 @@ export default class Pedido extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
+  @column()
+  declare produtoId: number
+
+  @column()
+  declare clienteId: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 

@@ -5,10 +5,6 @@ export default class Estoque extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-
-  @column()
-  declare produto: string
-
   @column()
   declare quantidade: number
   @column()

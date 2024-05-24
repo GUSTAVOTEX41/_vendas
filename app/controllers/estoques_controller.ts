@@ -16,7 +16,7 @@ export default class EstoquesController {
     }
     async store({ request }: HttpContext) {
 
-        const dados = request.only(['nome', 'quantidade', 'tipoId'])
+        const dados = request.only([ 'quantidade', 'produtoId'])
 
         return await Estoque.create(dados)
     }
@@ -24,7 +24,7 @@ export default class EstoquesController {
     async update({ params, request }: HttpContext) {
 
         const estoque = await Estoque.findOrFail(params.id)
-        const dados = request.only(['nome', 'quantidade', 'tipoId'])
+        const dados = request.only([ 'quantidade', 'produtoId'])
 
         estoque.merge(dados)
         return await estoque.save()
