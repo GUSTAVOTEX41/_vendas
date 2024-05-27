@@ -20,7 +20,7 @@ router.get('/', async () => {
   }
 })
 router.resource('/produtos', ProdutosController).apiOnly()
-router.resource('/cliente', ClientesController).apiOnly()
-router.resource('/funcionario', FuncionariosController).apiOnly()
-router.resource('/pedido', PedidosController).apiOnly()
+router.resource('/clientes', ClientesController).apiOnly()
+router.resource('/funcionarios', FuncionariosController).apiOnly()
+router.resource('/pedidos', PedidosController).apiOnly()
 router.resource('/estoque', EstoquesController).apiOnly()
