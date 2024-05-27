@@ -3,6 +3,7 @@ import { BaseModel, belongsTo, column } from '@adonisjs/lucid/orm'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Produto from './produto.js'
 import Cliente from './cliente.js'
+import Funcionario from './funcionario.js'
 
 
 
@@ -16,6 +17,9 @@ export default class Pedido extends BaseModel {
   @column()
   declare clienteId: number
 
+  @column()
+  declare funcionarioId: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
@@ -27,5 +31,8 @@ export default class Pedido extends BaseModel {
 
   @belongsTo(() => Cliente)
   declare cliente: BelongsTo<typeof Cliente>
+
+  @belongsTo(() => Funcionario)
+  declare funcionario: BelongsTo<typeof Funcionario>
 
 }

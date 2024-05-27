@@ -13,6 +13,8 @@ export default class ProdutosController {
     async show({ params }: HttpContext) {
         return await Produto.query()
             .where('id', params.id)
+            .preload('pedido')
+            .preload('estoque')
             .first()
 
     }

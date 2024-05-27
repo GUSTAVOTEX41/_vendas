@@ -13,6 +13,7 @@ export default class FuncionariosController {
     async show({params}: HttpContext){
         return await Funcionario.query()
                             .where('id', params.id)
+                            .preload('pedido')
                             .first()
     }
 

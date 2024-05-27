@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.increments('id')
       table.integer('produto_id').unsigned().references('id').inTable('produto').notNullable()
       table.integer('cliente_id').unsigned().references('id').inTable('cliente').notNullable()
+      table.integer('funcionario_id').unsigned().references('id').inTable('funcionarios').notNullable()
       table.timestamp('created_at')
       table.timestamp('updated_at')
     })

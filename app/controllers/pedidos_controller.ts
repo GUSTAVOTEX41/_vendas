@@ -15,6 +15,7 @@ export default class PedidosController {
             .where('id', params.id)
             .preload('produto')
             .preload('cliente')
+            .preload('funcionario')
             .firstOrFail()
 
     }

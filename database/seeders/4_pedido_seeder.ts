@@ -8,9 +8,9 @@ export default class extends BaseSeeder {
   async run() {
 
     await Pedido.createMany([
-      {  produtoId: 1, clienteId:1 },
-      {  produtoId: 3,clienteId:2 },
-      {  produtoId: 2 , clienteId:3},
+      {  produtoId: 1, clienteId:1 ,funcionarioId:1 },
+      {  produtoId: 3,clienteId:2, funcionarioId:2 },
+      {  produtoId: 2 , clienteId:3, funcionarioId:3},
 
     ])
   }
