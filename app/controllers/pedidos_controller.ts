@@ -13,7 +13,9 @@ export default class PedidosController {
     async show({ params }: HttpContext) {
         return await Pedido.query()
             .where('id', params.id)
-            .first()
+            .preload('produto')
+            .preload('cliente')
+            .firstOrFail()
 
     }
     async store({ request }: HttpContext) {

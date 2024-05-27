@@ -5,7 +5,6 @@ export default class Funcionario extends BaseModel {
   @column({ isPrimary: true })
   declare id: number
 
-
   @column()
   declare nome: string
 
@@ -14,7 +13,6 @@ export default class Funcionario extends BaseModel {
 
   @column()
   declare sexo: string
-
 
   @column()
   declare telefone: string

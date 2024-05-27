@@ -11,6 +11,7 @@ export default class EstoquesController {
     async show({ params }: HttpContext) {
         return await Estoque.query()
             .where('id', params.id)
+            .preload('produto')
             .first()
 
     }
