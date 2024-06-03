@@ -11,7 +11,7 @@ export default class Funcionario extends BaseModel {
   declare nome: string
 
   @column()
-  declare CPF: string
+  declare cpf: string
 
   @column()
   declare sexo: string

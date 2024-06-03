@@ -9,7 +9,7 @@ export default class Cliente extends BaseModel {
   declare nome: string
 
   @column()
-  declare CPF: string
+  declare cpf: string
 
   @column()
   declare sexo: string

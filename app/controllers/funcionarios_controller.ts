@@ -5,7 +5,7 @@ export default class FuncionariosController {
 
     async index({request}: HttpContext){
         const page = request.input('page', 1)
-        const perPage = request.input('perPage', 10)
+        const perPage = request.input('perPage', 5)
 
         return await Funcionario.query().paginate(page, perPage)
     }
@@ -18,14 +18,14 @@ export default class FuncionariosController {
     }
 
     async store({request}: HttpContext){
-        const dados = request.only(['nome', 'CPF', 'sexo','telefone','cargo' ])
+        const dados = request.only(['nome', 'cpf', 'sexo','telefone','cargo' ])
         return await Funcionario.create(dados)
     }
 
     async update({params, request}: HttpContext){
 
         const funcionario = await Funcionario.findOrFail(params.id)
-        const dados = request.only(['nome', 'CPF', 'sexo','telefone','cargo'])
+        const dados = request.only(['nome', 'cpf', 'sexo','telefone','cargo'])
 
         funcionario.merge(dados)
         return await funcionario.save()

@@ -4,7 +4,7 @@ import Estoque from '../models/estoque.js'
 export default class EstoquesController {
     async index({ request }: HttpContext) {
         const page = request.input('page', 1)
-        const perPage = request.input('perPage', 10)
+        const perPage = request.input('perPage', 5)
         return await Estoque.query().paginate(page, perPage)
     }
 

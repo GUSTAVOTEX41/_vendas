@@ -6,7 +6,7 @@ export default class PedidosController {
 
     async index({ request }: HttpContext) {
         const page = request.input('page', 1)
-        const perPage = request.input('perPage', 10)
+        const perPage = request.input('perPage', 5)
         return await Pedido.query().paginate(page, perPage)
     }
 
